@@ -151,23 +151,11 @@ doctype_js = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"onco.tasks.all"
-# 	],
-# 	"daily": [
-# 		"onco.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"onco.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"onco.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"onco.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"onco.tasks.send_expiry_reminders"
+	]
+}
 
 # Testing
 # -------
