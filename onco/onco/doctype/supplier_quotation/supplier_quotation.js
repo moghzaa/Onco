@@ -3,6 +3,7 @@ frappe.ui.form.on("Supplier Quotation", {
     refresh: function (frm) {
         frm.trigger("toggle_fields_based_on_series");
         frm.trigger("toggle_quantity_edit");
+        frm.trigger("set_item_query");
 
         if (!frm.doc.__islocal && frm.doc.docstatus === 1) {
             frm.trigger("add_custom_actions");
@@ -11,10 +12,24 @@ frappe.ui.form.on("Supplier Quotation", {
 
     naming_series: function (frm) {
         frm.trigger("toggle_fields_based_on_series");
+        frm.trigger("set_item_query");
     },
 
     custom_importation_status: function (frm) {
         frm.trigger("toggle_quantity_edit");
+    },
+
+    set_item_query: function (frm) {
+        frm.set_query("item_code", "items", function () {
+            if (frm.doc.naming_series) {
+                if (frm.doc.naming_series.includes("EDA-APIMR")) {
+                    return { filters: { custom_registered: 1 } };
+                } else if (frm.doc.naming_series.includes("EDA-SPIMR")) {
+                    return { filters: { custom_registered: 0 } };
+                }
+            }
+            return {};
+        });
     },
 
     toggle_fields_based_on_series: function (frm) {
