@@ -1,0 +1,106 @@
+{
+    "actions": [],
+    "creation": "2026-01-17 10:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "shipment_no",
+        "invoice_no",
+        "item_name",
+        "batch_no",
+        "column_break_qty",
+        "invoice_qty",
+        "received_qty",
+        "damage_qty",
+        "over_qty",
+        "accepted_qty",
+        "column_break_dates",
+        "manufacturing_date",
+        "expiry_date"
+    ],
+    "fields": [
+        {
+            "fieldname": "shipment_no",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Shipment No"
+        },
+        {
+            "fieldname": "invoice_no",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Invoice No"
+        },
+        {
+            "fieldname": "item_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Item Name"
+        },
+        {
+            "fieldname": "batch_no",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Batch No"
+        },
+        {
+            "fieldname": "column_break_qty",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "invoice_qty",
+            "fieldtype": "Float",
+            "in_list_view": 1,
+            "label": "Invoice Qty"
+        },
+        {
+            "fieldname": "received_qty",
+            "fieldtype": "Float",
+            "in_list_view": 1,
+            "label": "Received Qty"
+        },
+        {
+            "fieldname": "damage_qty",
+            "fieldtype": "Float",
+            "label": "Damage Qty"
+        },
+        {
+            "fieldname": "over_qty",
+            "fieldtype": "Float",
+            "label": "Over Qty"
+        },
+        {
+            "fieldname": "accepted_qty",
+            "fieldtype": "Float",
+            "in_list_view": 1,
+            "label": "Accepted Qty",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_dates",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "manufacturing_date",
+            "fieldtype": "Date",
+            "label": "Manufacturing Date"
+        },
+        {
+            "fieldname": "expiry_date",
+            "fieldtype": "Date",
+            "label": "Expiry Date"
+        }
+    ],
+    "istable": 1,
+    "links": [],
+    "modified": "2026-01-17 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Onco",
+    "name": "Purchase Receipt Report Item",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

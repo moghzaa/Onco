@@ -43,3 +43,29 @@ def set_shipment(doc_shipments, rec):
     
     except Exception as e:
         frappe.throw(str(e))
+
+from frappe.model.mapper import get_mapped_doc
+
+@frappe.whitelist()
+def make_purchase_receipt(source_name, target_doc=None):
+	doc = frappe.get_doc("Shipments", source_name)
+	if not doc.purchase_invoice:
+		frappe.throw("Please link a Purchase Invoice first")
+
+	def set_missing_values(source, target):
+		target.run_method("set_missing_values")
+		target.run_method("calculate_taxes_and_totals")
+		# Link Shipment
+		# target.custom_shipment_ref = source_name # Assuming field exists or we create it
+
+	return get_mapped_doc("Purchase Invoice", doc.purchase_invoice, {
+		"Purchase Invoice": {
+			"doctype": "Purchase Receipt",
+			"validation": {
+				"docstatus": ["=", 1]
+			}
+		},
+		"Purchase Invoice Item": {
+			"doctype": "Purchase Receipt Item",
+		},
+	}, target_doc, set_missing_values)
