@@ -18,11 +18,27 @@
   "tender_start_date",
   "tender_end_date",
   "supplying_by",
+  "tender_rules_section",
+  "apply_extra_quantities",
+  "extra_quantities_column",
+  "extra_qty_type",
+  "extra_qty_value",
+  "apply_extended_time",
+  "extended_time_column",
+  "extended_start_date",
+  "extended_end_date",
   "items_section",
   "items_fmd",
-  "tender_supplier",
   "item_tender",
+  "tender_supplier",
   "amended_from",
+  "tender_status_section",
+  "tender_status",
+  "price_list_section",
+  "tender_price_list",
+  "price_deviation_section",
+  "tender_price_deviation",
+  "tender_price_deviation_details",
   "offers_tab",
   "onco_offers_section",
   "onco_offers_view",
@@ -109,6 +125,58 @@
    "options": "\nOncopharm\nDistributor\nOncopharm & Distributor"
   },
   {
+   "fieldname": "tender_rules_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Rules"
+  },
+  {
+   "default": 0,
+   "fieldname": "apply_extra_quantities",
+   "fieldtype": "Check",
+   "label": "Apply Extra Quantities"
+  },
+  {
+   "depends_on": "eval:doc.apply_extra_quantities == 1",
+   "fieldname": "extra_quantities_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.apply_extra_quantities == 1",
+   "fieldname": "extra_qty_type",
+   "fieldtype": "Select",
+   "label": "Extra Quantity Type",
+   "options": "\nPercent\nQuantity"
+  },
+  {
+   "depends_on": "eval:doc.apply_extra_quantities == 1",
+   "fieldname": "extra_qty_value",
+   "fieldtype": "Float",
+   "label": "Extra Quantity Value"
+  },
+  {
+   "default": 0,
+   "fieldname": "apply_extended_time",
+   "fieldtype": "Check",
+   "label": "Apply Extended Time"
+  },
+  {
+   "depends_on": "eval:doc.apply_extended_time == 1",
+   "fieldname": "extended_time_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.apply_extended_time == 1",
+   "fieldname": "extended_start_date",
+   "fieldtype": "Date",
+   "label": "Extended Start Date"
+  },
+  {
+   "depends_on": "eval:doc.apply_extended_time == 1",
+   "fieldname": "extended_end_date",
+   "fieldtype": "Date",
+   "label": "Extended End Date"
+  },
+  {
    "fieldname": "items_section",
    "fieldtype": "Section Break",
    "label": "Items"
@@ -142,6 +210,45 @@
    "options": "Tenders",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "tender_status_section",
+   "fieldtype": "Section Break",
+   "label": "Tender Status & Fulfillment"
+  },
+  {
+   "fieldname": "tender_status",
+   "fieldtype": "Table",
+   "label": "Tender Status",
+   "options": "Tender Status"
+  },
+  {
+   "fieldname": "price_list_section",
+   "fieldtype": "Section Break",
+   "label": "Price List for Tender"
+  },
+  {
+   "fieldname": "tender_price_list",
+   "fieldtype": "Table",
+   "label": "Tender Price List",
+   "options": "Price List for Tender"
+  },
+  {
+   "fieldname": "price_deviation_section",
+   "fieldtype": "Section Break",
+   "label": "Price Deviation Tracking"
+  },
+  {
+   "fieldname": "tender_price_deviation",
+   "fieldtype": "Table",
+   "label": "Tender Price Deviation",
+   "options": "Tender Price Deviation"
+  },
+  {
+   "fieldname": "tender_price_deviation_details",
+   "fieldtype": "Table",
+   "label": "Tender Price Deviation Details",
+   "options": "Tender Price Deviation Details"
   },
   {
    "fieldname": "offers_tab",
@@ -205,7 +312,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-01 02:29:00.691340",
+ "modified": "2026-01-17 12:00:00.000000",
  "modified_by": "Administrator",
  "module": "Onco",
  "name": "Tenders",

@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-17 12:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_name",
+  "tender_quantity",
+  "supplied_quantity",
+  "remaining_quantity",
+  "fulfillment_percent"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "options": "Item"
+  },
+  {
+   "fieldname": "tender_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Tender Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplied_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Supplied Quantities"
+  },
+  {
+   "fieldname": "remaining_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Remaining Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fulfillment_percent",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Percent (%)",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-17 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Onco",
+ "name": "Tender Status",
+ "owner": "nado_rml@hotmail.com",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
